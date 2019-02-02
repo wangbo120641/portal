@@ -1,0 +1,108 @@
+/*效果1*/
+.noSupportBrowser{
+  /*display: none;*/
+  position: absolute;
+  width:100%;
+  height:100%;
+  overflow: hidden;
+  min-width: 1000px;
+}
+.noSupportBrowser a{
+  cursor: pointer;
+}
+.noSupportBrowser .chromeIcon{
+  position: absolute;
+  margin-top: -176px;
+  margin-left: 10%;
+  top: 50%;
+  width:256px;
+  height:286px;
+  text-align: center;
+}
+
+.noSupportBrowser .text{
+  position: absolute;
+  top:50%;
+  left:50%;
+  bottom:0;
+  right:0;
+  margin-left: -200px;
+  margin-top: -100px;
+  width:400px;
+  height: 200px;
+}
+.noSupportBrowser .text span{
+  line-height: 28px;
+  font-size: 22px;
+  display: inline-block;
+  color:#777777;
+}
+.noSupportBrowser .conner{
+  position: absolute;
+  top:0;
+  right:0;
+  background-image: url("../image/conner.png");
+  width:150px;
+  height: 150px;
+  opacity: 0.8;
+}
+.noSupportBrowser .round1{
+  position: absolute;
+  bottom: 50px;
+  right:250px;
+  width:150px;
+  height: 150px;
+  background-image: url("../image/round1.png");
+}
+.noSupportBrowser .round2{
+  position: absolute;
+  bottom: 300px;
+  right:100px;
+  width:75px;
+  height: 75px;
+  background-image: url("../image/round2.png");
+}
+.noSupportBrowser .round3{
+  position: absolute;
+  bottom: 0px;
+  right:500px;
+  width:227px;
+  height: 146px;
+  background-image: url("../image/round3.png");
+}
+
+/*效果2*/
+.noSupportBrowserBlack{
+  position: absolute;
+  width:100%;
+  height: 100%;
+  background-color: #4c4c4c;
+  color:#ffffff;
+  font-size: 16px;
+  text-align: center;
+}
+.noSupportBrowserBlack a{
+  cursor: pointer;
+}
+.noSupportBrowserBlack div.containerBox{
+  position: absolute;
+  top:50%;
+  left: 50%;
+  margin-top: -200px;
+  margin-left: -250px;
+  height: 300px;
+  width: 500px;
+}
+.noSupportBrowserBlack .text{
+  color:#84a789;
+  font-size: 30px;
+  text-align: center;
+}
+.noSupportBrowserBlack span{
+  line-height: 30px;
+  display: inline-block;
+}
+.noSupportBrowserBlack .text span{
+  line-height: 40px;
+  margin-bottom: 50px;
+}

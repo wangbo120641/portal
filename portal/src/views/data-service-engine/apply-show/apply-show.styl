@@ -1,0 +1,292 @@
+span.typeClass {
+  color: #2f6589;
+  padding: 0 10px;
+  padding-right: 23px;
+  height: 32px;
+  line-height: 32px;
+  display: inline-block;
+  cursor: pointer;
+}
+
+span.typeClass:hover {
+  color: #409EFF;
+}
+
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .2s;
+}
+
+.fade-enter, .fade-leave-to {
+  opacity: 0;
+}
+  
+  
+.listShowLine{
+  display: inline-block;
+  width: 100%;
+  li:not(:last-child){
+    .cardContainer{
+      border-bottom 1px solid #d9d9d9
+    }
+  }
+  li {
+    display: block;
+    text-align: center;
+    padding: 0px 5px;
+    .cardContainer {
+      cursor pointer
+      padding 8px 0
+      .indexBadge{
+        margin-top 13px
+        margin-right 10px
+      }
+      .index{
+        float left
+      }
+      div.img{
+        float left
+        width: 40px;
+        height: 40px;
+        padding-top 3px
+        img {
+          width: 40px;
+          height: 40px;
+          border 1px solid #ebeef5;
+          border-radius 4px;
+        }
+      }
+      div.textContainer {
+        box-sizing border-box
+        width: 100%;
+        padding-left 70px
+        height 50px
+        text-align center
+        span{
+          display block
+          word-wrap: break-word;
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+          word-break: normal;
+          width: auto;
+          padding 3px
+        }
+        span.title {
+          color #a0a0a0
+        }
+        span.visitCount{
+          
+        }
+        span.visitCount>span{
+          color:dodgerblue
+        }
+      }
+    }
+    .cardContainer:hover {
+      img {
+        box-shadow 0 2px 12px 0 rgba(0, 0, 0, .1)
+      }
+    }
+    
+  }
+}
+.listShowMin {
+  display: inline-block;
+  width: 100%;
+  li {
+    display: inline-block;
+    float: left;
+    text-align: center;
+    padding: 10px 0px;
+    .cardContainer {
+      cursor pointer
+      div.textContainer {
+        width: 100%;
+        padding-top: 5px;
+        span.title {
+          word-break: normal;
+          width: auto;
+          display: block;
+          word-wrap: break-word;
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+        }
+      }
+    }
+    .cardContainer:hover {
+      color: dodgerblue
+      .img {
+        box-shadow 0 2px 12px 0 rgba(0, 0, 0, .1)
+      }
+    }
+    .img {
+      width: 50px;
+      height: 50px;
+      border-radius 4px;
+      border 1px solid #ebeef5;
+    }
+  }
+}
+
+.minPanel {
+  position relative
+  border-radius 4px
+  border none
+  height 49%
+  background-color #fff
+  .mtitle {
+    position absolute
+    box-sizing border-box
+    padding 18px 2px
+    top 0px
+    height 60px
+    width 100%
+    font-size 18px
+    font-weight bolder
+    .more{
+      float right
+      color #2679ff
+    }
+    .more:hover{
+      color #134cff
+    }
+
+  }
+  .body {
+    position absolute
+    box-sizing border-box
+    top 0
+    bottom 0px
+    padding 5px
+    width 100%
+    margin-top 60px
+    background-color #f8f9f9
+    border 1px solid #eaeaea
+    border-radius 3px
+    overflow-y auto
+  }
+}
+
+.appSort {
+  display inline-block
+  margin-left 20px
+  button {
+    height 28px
+    padding 5px 15px
+  }
+}
+
+.app-card {
+  position: relative;
+  //background-color: #fafafa;
+  border:none;
+}
+
+.app-card .app-div {
+  //border-bottom: 1px solid #ebeef5;
+}
+
+.app-card .appImgDiv {
+  height: 110px;
+  width: 100%;
+  overflow: hidden;
+}
+
+.app-card .img-bg {
+  position: absolute;
+  display: flex;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  cursor pointer
+  //background: rgba(101, 101, 101, 0.6);
+  //background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.3);
+  color: #ffffff;
+  opacity: 0;
+  transition: all .3s linear;
+}
+
+.img-bg:hover {
+  opacity: 1;
+}
+
+.app-card .appImage {
+  height: 100%;
+  border-radius: 5px;
+
+}
+
+.app-card .appImage:hover {
+}
+
+.app-card .el-card__body {
+  display: table;
+  margin: 0 auto;
+}
+  
+.appShowBanner{
+  position relative
+  height 300px
+  background-image url("/static/image/banner/appBanner.png")
+  background-size cover
+  -webkit-background-size cover
+  -moz-background-size cover
+  background-color  #318FF3
+  .gif{
+    width 342px
+    height 300px
+    position absolute
+    right 0
+    margin-right 15%
+  }
+  .bannerTitle{
+    position absolute
+    right 60%
+    top 100px
+    table{
+      border none
+      color #ffffff
+      tr:nth-child(1){
+        height 30px
+        font-size 30px
+      }
+      tr:nth-child(2){
+        height 30px
+        font-size 16px
+      }
+      td{
+        padding 10px
+      }
+    }
+  }
+  
+}
+//
+//.line {
+//  position: absolute;
+//  top: 22.5px;
+//  left: 0;
+//  width: 100%;
+//  border-top: 1px solid #d1d1d1;
+//}
+//
+//.line .left {
+//  left: 0;
+//}
+//
+//.line .right {
+//  right: 0;
+//}
+//
+//.line span {
+//  position: absolute;
+//  display: block;
+//  top: -9.5px;
+//  width: 17px;
+//  height: 17px;
+//  border: 1px solid #d1d1d1;
+//  background: #fff
+//}

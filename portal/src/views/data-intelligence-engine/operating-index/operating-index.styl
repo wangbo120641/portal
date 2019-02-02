@@ -1,0 +1,113 @@
+
+.chart-wrapper {
+  background: #171616 4 a;
+  color: #cccccc;
+  padding: 8px 10px 0;
+  border: 1px solid #4498dd;
+  box-shadow: 0 2px 12px 0 #4498dd
+  .head-line {
+    border-bottom: 1px solid #4498dd;
+    margin-bottom: 10px;
+    color: #cccccc;
+    font-size: 16px;
+    font-weight: bold
+  }
+}
+
+.chart-wrapper:hover {
+  border: 1px solid #318FF3;
+  box-shadow: 0 2px 12px 0 #72B4FA
+}
+
+.selected-color {
+  color: #fff;
+  //background-color: #409EFF;
+  background: -moz-linear-gradient(left, #318FF3 0%, #72B4FA 100%);
+  background: -webkit-gradient(linear, top left, top right, color-stop(0%, #318FF3), color-stop(100%, #72B4FA));
+  background: -webkit-linear-gradient(left, #318FF3 0%, #72B4FA 100%);
+  background: -o-linear-gradient(left, #318FF3 0%, #72B4FA 100%);
+  background: -ms-linear-gradient(right, #318FF3 0%, #72B4FA 100%);
+  background: linear-gradient(to right, #318FF3 0%, #72B4FA 100%);
+  border-color: #409EFF;
+}
+
+//分类按钮
+.button-margin {
+  margin-top: -16px;
+  margin-bottom: -4px;
+}
+
+/* Echarts数据视图表格样式 */
+.data-view-table {
+  border-collapse: collapse;
+  margin: 0 auto;
+  text-align: center;
+  width: 90%;
+  margin-top: 15px;
+}
+
+.data-view-table td, .data-view-table th {
+  border: 1px solid #69eef7;
+  color: #cccccc;
+  height: 30px;
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.data-view-table thead th {
+  background-color: #CCE8EB;
+  width: 100px;
+  /*font-size: 14px;*/
+  /*font-weight: bold;*/
+}
+
+.data-view-table tr:nth-child(odd) {
+  background: #fff;
+}
+
+.data-view-table tr:nth-child(even) {
+  background: #F5FAFA;
+}
+
+/*共享大屏1*/
+
+//关键指标
+.key-index-container {
+  width: 100%;
+  height: 100%;
+  min-width: 1400px;
+}
+
+.key-index-title {
+  padding-top: 30px;
+  background-image: -webkit-gradient(linear, 0 0, 0 bottom, from(rgba(255, 255, 255, 1)), to(rgb(86, 245, 255)));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.key-index-num {
+  font-size: 16px;
+  color: #ffa700;
+  font-weight: bold;
+}
+
+.open-container .el-carousel__item h3 {
+  color: #475669;
+  font-size: 14px;
+  opacity: 0.75;
+  margin: 0;
+}
+
+.open-container .el-carousel__mask, .el-cascader-menu, .el-cascader-menu__item.is-disabled:hover, .el-collapse-item__header, .el-collapse-item__wrap {
+  background-color: rgba(266, 255, 255, 0);
+
+}
+
+.open-container .el-carousel__item--card {
+  width: 50%;
+  background-image: url(/static/image/share-index1/open1.png);
+  background-size: 100% 100%;
+}
+  

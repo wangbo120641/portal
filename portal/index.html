@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="./static/css/animate.css">
+  <link rel="stylesheet" href="./static/css/reset.css">
+  <link rel="stylesheet" href="./static/css/skin.css">
+  <link rel="stylesheet" href="./static/css/zhgx.css">
+  <link rel="icon" href="./static/image/icon/favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="./static/image/icon/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+  <!--<link rel="stylesheet" href="./static/cropper/cropper.css">-->
+  <title></title>
+</head>
+<body>
+<div id="app"></div>
+<!--非chrome浏览器提示效果1-->
+<div class="noSupportBrowser" style="display: none">
+  <div class="chromeIcon">
+    <img src="./static/image/chrome.png" style="width: 250px"/>
+    <span style="text-align: center"><a href="https://pc.qq.com/search.html#!keyword=chrome" style="color: #1d8fff">点击下载Chrome</a></span>
+  </div>
+  <div class="text">
+    <span style="margin-bottom: 10px"> 很抱歉</span><br/>
+    <span style="font-size:18px;"> 本系统暂不支持该浏览器，请您使用Chrome浏览器（V59及以上版本）访问本系统！</span>
+  </div>
+  <div class="conner"></div>
+  <div class="round1"></div>
+  <div class="round2"></div>
+  <div class="round3"></div>
+</div>
+<!--非chrome浏览器提示效果2-->
+<div class="noSupportBrowserBlack" style="display: none">
+  <div class="containerBox">
+    <div class="text">
+      <span>您的浏览器不符合要求</span>
+    </div>
+    <div style="margin-bottom: 30px">
+      <span>为了能正常体验<span id="unique-pro-name"></span>系统的功能，建议您使用Chrome浏览器（V59及以上版本）访问。</span>
+    </div>
+    <div>
+      <img src="./static/image/chrome.png" style="width:50px;"/><br/>
+      <span><a href="https://pc.qq.com/search.html#!keyword=chrome" style="font-size: 14px;color: #1d8fff">点击下载Chrome</a></span>
+    </div>
+  </div>
+</div>
+<script type="text/javascript" src="./static/ipConfig.js"></script>
+<script src="./static/js/BrowserSupport.js"></script>
+<script src="./static/js/EasePack.min.js"></script>
+<script src="./static/js/TweenLite.min.js"></script>
+<script src="./static/js/PageAfterLoader.js"></script>
+<script src="https://cdn.bootcss.com/vue/2.5.2/vue.min.js"></script>
+<script src="https://cdn.bootcss.com/vue-router/3.0.1/vue-router.min.js"></script>
+<script src="https://cdn.bootcss.com/axios/0.18.0/axios.min.js"></script>
+<script src="https://cdn.bootcss.com/vue-i18n/7.6.0/vue-i18n.min.js"></script>
+<script src="https://unpkg.com/element-ui/lib/index.js"></script>
+</body>
+</html>
