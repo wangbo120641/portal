@@ -155,9 +155,9 @@
   import BreadNav from '../../mixins/bread-nav';
   import API from '../../rest-api/restApi';
   import RegulationAdd from './regulation-add';
-  import _ from 'lodash';
   import dataFormatFnList from '../../util/dataFormat';
   import AnimateLine from 'src/component/animate-line';
+  import debounce from 'lodash/debounce';
 
   export default {
     name: 'policies-regulations',
@@ -246,7 +246,7 @@
           console.log(response);
         });
       },
-      getRList: _.debounce(function () {
+      getRList: debounce(function () {
         let data = {
           'title': this.nameSearch,
           'lawType': this.selectType

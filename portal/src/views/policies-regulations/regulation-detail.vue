@@ -53,8 +53,8 @@
   import ComBanner from 'src/component/com-banner/com-banner';
   import BreadNav from '../../mixins/bread-nav';
   import API from '../../rest-api/restApi';
-  import pdf from 'vue-pdf';
   import dataFormatFnList from '../../util/dataFormat';
+  const pdf = () => import('vue-pdf');
 
   export default {
     name: 'regulation-detail',

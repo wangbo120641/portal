@@ -7,7 +7,7 @@
  *           5、如果跳转页面的逻辑层级（面包屑显示的层级）和目标页的path层级不一致，可以使用router.push({name:'component',params:{navLabel:'newTitle',parentNavItems:navItems}})
  */
 import Vue from 'vue';
-import Router from 'vue-router';
+import VueRouter from 'vue-router';
 import store from 'src/vuex/store.js';
 import Auth from '../util/auth';
 
@@ -16,12 +16,12 @@ import routes from './staticRoutes';
 import matchRoutes from './matchRoutes';
 // import treeTable from '../views/system-management/tree-table-demo';// 树组件demo
 
-Vue.use(Router);
+Vue.use(VueRouter);
 
 // 把完整路由存储到vuex中，登录后有权限的路由要和这个比对
 store.commit('router/SET_FULL_ROUTES', routes);
 
-const router = new Router({
+const router = new VueRouter({
 // mode: 'history', // Demo is living in initRouteGitHub.io, so required!
 // linkActiveClass: 'active',
   routes: routes,

@@ -260,13 +260,12 @@
   import dataFormatFnList from '../../util/dataFormat';
   import BreadNav from 'src/mixins/bread-nav';
   import Vue from 'vue';
-  import VueFullPage from 'vue-fullpage.js';
   import API from '../../rest-api/restApi';
   import imageErrorIcon from './image/bumen-icon.png';
   import imageErrorIconHot from './image/hot-icon.png';
-  
+  const VueFullPage = () => import('vue-fullpage.js');
   Vue.use(VueFullPage);
-
+  
   export default {
     name: 'home',
     components: {
@@ -304,7 +303,11 @@
         interfaceNewTable: [] // 接口最新
       };
     },
+    beforeCreate () {
+     
+    },
     created () {
+
       let _that = this;
       // 获取关键项指标
 

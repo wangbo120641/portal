@@ -11,6 +11,7 @@ import rectBadge from 'src/component/rect-badge';
 import AnimateLine from 'src/component/animate-line';
 import dataFormatFnList from '../../../util/dataFormat';
 import sharingTypes from './catalog-list-sharingTypes';
+import debounce from 'lodash/debounce';
 
 export default {
   name: 'data-catalog',
@@ -124,7 +125,7 @@ export default {
     }
   },
   created () {
-    this.debouncedGetAnswer = _.debounce(this.getList, 500);
+    this.debouncedGetAnswer = debounce(this.getList, 500);
     // 判断二级菜单类别
     let name = this.$route.params.name;
 

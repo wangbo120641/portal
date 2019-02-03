@@ -1,9 +1,9 @@
-// import Vue from 'vue';
+import Vue from 'vue';
 import qs from 'qs';
 import router from './router'; // 路由相关配置
 import VueProgressBar from 'vue-progressbar'; // 进度条
-// import i18n from 'src/lang'; // 国际化
-// import Element from 'element-ui'; // 引入element-ui组件
+import i18n from 'src/lang'; // 国际化
+import ELEMENT from 'element-ui'; // 引入element-ui组件
 // import 'element-ui/lib/theme-chalk/index.css'; // 引入element-ui的样式
 import store from 'src/vuex/store.js';
 import axiosPlugin from './rest-api/index';
@@ -16,19 +16,14 @@ import browser from 'src/util/browser';
 import App from './App';
 
 import 'common/stylus/index.styl';
-import VueAwesomeSwiper from 'vue-awesome-swiper';
-import 'swiper/dist/css/swiper.css';
+// import VueAwesomeSwiper from 'vue-awesome-swiper';
+// import 'swiper/dist/css/swiper.css';
 import messageBoxCustomer from 'src/component/message-box-customer';
-
-const Vue = require('vue');
-const Element = require('element-ui');
-// const axios = require('axios');
-// const Qs = require('qs');
 
 // 在测试环境中引入mock引入并启动mock，
 // process.env.NODE_ENV === 'development' && require('../mocks/index');
 if (browser === 'Chrome' || browser === 'FF') {
-  Vue.use(VueAwesomeSwiper);
+  // Vue.use(VueAwesomeSwiper);
   Vue.use(axiosPlugin);
   Vue.prototype.$qs = qs;
   Vue.config.productionTip = false;  // 关闭生产模式下给出的提示
@@ -39,7 +34,7 @@ if (browser === 'Chrome' || browser === 'FF') {
     height: '3px'
   });
   Vue.use(directive);
-  Vue.use(Element, {// 注册Element组件
+  Vue.use(ELEMENT, {// 注册Element组件
     i18n: (key, value) => i18n.t(key, value)
   });
 

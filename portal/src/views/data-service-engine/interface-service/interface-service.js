@@ -5,6 +5,7 @@ import InterfaceDetail from './components/interface-detail.vue';
 import RectBadge from 'src/component/rect-badge';
 import breadNav from 'src/mixins/bread-nav';
 import RESTAPI from 'src/rest-api/restApi.js';
+import debounce from 'lodash/debounce';
 
 let data = {
   name: 'interface-service',
@@ -364,7 +365,7 @@ let data = {
     // 搜索框延迟加载
     debounceSearch () {
       this.tableParams.page = 1;
-      _.debounce(this.interfaceDataQuery, 500)();
+      debounce(this.interfaceDataQuery, 500)();
     },
     // 页面初始化加载
     init (category) {

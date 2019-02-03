@@ -64,10 +64,17 @@ module.exports = {
   // 如果需要引入jquery 或者 其他非npm安装的文件，参照https://segmentfault.com/a/1190000007020623
   externals: {
     'vue': 'Vue',
-    'vue-router': 'Router',
-    'axios': 'axios',
-    'element-ui': 'Element',
-    'i18n': 'i18n'
+    // 'vue-router': {
+    //   commonjs: 'VueRouter',
+    //   amd: 'VueRouter',
+    //   root: 'VueRouter'
+    // },
+    // 'axios': 'axios',
+    'element-ui': 'ELEMENT',
+    'echarts': 'echarts',
+    'highlight.js': 'hljs'
+    // 'lodash': '_'
+    
   },
   /* loader 用于对模块的源代码进行转换。loader 可以使你在 import 或"加载"模块时预处理文件。
   因此，loader 类似于其他构建工具中“任务(task)”，并提供了处理前端构建步骤的强大方法。loader 
