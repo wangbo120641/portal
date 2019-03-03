@@ -263,7 +263,7 @@
   import API from '../../rest-api/restApi';
   import imageErrorIcon from './image/bumen-icon.png';
   import imageErrorIconHot from './image/hot-icon.png';
-  const VueFullPage = () => import('vue-fullpage.js');
+  import VueFullPage from 'vue-fullpage.js';
   Vue.use(VueFullPage);
   
   export default {

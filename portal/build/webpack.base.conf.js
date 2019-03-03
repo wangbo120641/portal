@@ -63,16 +63,16 @@ module.exports = {
 
   // 如果需要引入jquery 或者 其他非npm安装的文件，参照https://segmentfault.com/a/1190000007020623
   externals: {
-    'vue': 'Vue',
+    // 'vue': 'Vue',
     // 'vue-router': {
     //   commonjs: 'VueRouter',
     //   amd: 'VueRouter',
     //   root: 'VueRouter'
     // },
     // 'axios': 'axios',
-    'element-ui': 'ELEMENT',
-    'echarts': 'echarts',
-    'highlight.js': 'hljs'
+    // 'element-ui': 'ELEMENT',
+    // 'echarts': 'echarts',
+    // 'highlight.js': 'hljs'
     // 'lodash': '_'
     
   },

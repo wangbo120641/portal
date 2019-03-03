@@ -3,8 +3,8 @@ import qs from 'qs';
 import router from './router'; // 路由相关配置
 import VueProgressBar from 'vue-progressbar'; // 进度条
 import i18n from 'src/lang'; // 国际化
-import ELEMENT from 'element-ui'; // 引入element-ui组件
-// import 'element-ui/lib/theme-chalk/index.css'; // 引入element-ui的样式
+import Element from 'element-ui'; // 引入element-ui组件
+import 'element-ui/lib/theme-chalk/index.css'; // 引入element-ui的样式
 import store from 'src/vuex/store.js';
 import axiosPlugin from './rest-api/index';
 
@@ -34,7 +34,7 @@ if (browser === 'Chrome' || browser === 'FF') {
     height: '3px'
   });
   Vue.use(directive);
-  Vue.use(ELEMENT, {// 注册Element组件
+  Vue.use(Element, {// 注册Element组件
     i18n: (key, value) => i18n.t(key, value)
   });
 

@@ -13,7 +13,7 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin')// 提取css的�
 const OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin')// webpack 优化压缩和优化 css 的插件
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
-
+const {vendorConfig, htmlWebpackConf} = require('./vendor-splie.conf');
 // 如果当前环境为测试环境，则使用测试环境，否则，使用生产环境
 const env = process.env.NODE_ENV === 'testing' //原本为testing node判断当前环境是dev还是product（通过 set process.env.NODE_ENV = testing 设置）
   ? require('../config/test.env')
@@ -92,7 +92,14 @@ const webpackConfig = merge(baseWebpackConfig, {
         // https://github.com/kangax/html-minifier#options-quick-reference
       },
       // necessary to consistently work with multiple chunks via CommonsChunkPlugin
-      chunksSortMode: 'dependency' // 这个选项决定了 script 标签的引用顺序。默认有四个选项，'none', 'auto', 'dependency', '{function}','dependency' 不用说，按照不同文件的依赖关系来排序
+      chunksSortMode: function (chunk1, chunk2) {
+        var orders = htmlWebpackConf.chunks;
+        console.log(config.build.index)
+        console.log(chunk1, chunk2)
+        return orders.indexOf(chunk1.names[0]) > orders.indexOf(chunk2.names[0]);
+      } // 这个选项决定了 script 标签的引用顺序。默认有四个选项，'none', 'auto', 'dependency', '{function}','dependency' 不用说，按照不同文件的依赖关系来排序
+      // chunksSortMode: 'dependency',
+      // chunks: ['manifest', 'element-ui','echarts','lodash','zrender','vue-fullpage.js','vendor', 'web']
     }),
     // keep module.id stable when vendor modules does not change
     new webpack.HashedModuleIdsPlugin(),// 根据代码内容生成普通模块的id,确保源码不变，moduleID不变
@@ -105,6 +112,8 @@ const webpackConfig = merge(baseWebpackConfig, {
       minChunks (module) { // 在一个模块被提取到公共chunk之前，它必须被最少minChunks个chunk所包含。（通俗的说就是一个模块至少要被minChunks个模块所引用，才能被提取到公共模块。）
         // any required modules inside node_modules are extracted to vendor
         // node_modules中的任何所需模块都提取到vendor
+        // console.log(module.resource)
+        // console.log( path.join(__dirname, '../node_modules'));
         return (
           module.resource &&
           /\.js$/.test(module.resource) &&
@@ -114,6 +123,14 @@ const webpackConfig = merge(baseWebpackConfig, {
         )
       }
     }),
+    // new webpack.optimize.CommonsChunkPlugin({
+    //   name: 'vendor-element-ui',
+    //   chunks: ['vendor'],
+    //   minChunks(module, count) {
+    //     console.log('element')
+    //     return module.resource &&  /\.js$/.test(module.resource) && module.resource.includes('element-ui')
+    //   }
+    // }),
     /* 上面虽然已经分离了第三方库,每次修改编译都会改变vendor的hash值，导致浏览器缓存失效。
      原因是vendor包含了webpack在打包过程中会产生一些运行时代码，运行时代码中实际上保存了打包后的文件名。
      当修改业务代码时,业务代码的js文件的hash值必然会改变。一旦改变必然
@@ -158,8 +175,20 @@ const webpackConfig = merge(baseWebpackConfig, {
          logLevel: 'info'
            }
     )
-  ]
-})
+  ],
+  // optimization: {
+  //   runtimeChunk: "single", // enable "runtime" chunk
+  //   splitChunks: {
+  //     cacheGroups: {
+  //       vendor: {
+  //         test: /[\\/]node_modules[\\/]/,
+  //         name: "vendor",
+  //         chunks: "all"
+  //       }
+  //     }
+  //   }
+  // }
+}, vendorConfig)
 
 if (config.build.productionGzip) {// 判断是否启用Gzip
 
@@ -168,7 +197,7 @@ if (config.build.productionGzip) {// 判断是否启用Gzip
 
   webpackConfig.plugins.push(
     new CompressionWebpackPlugin({
-      asset: '[path].gz[query]', // 目标文件名
+      filename: '[path].gz[query]', // 目标文件名
       algorithm: 'gzip', // 使用gzip压缩
       test: new RegExp( // 满足正则表达式的文件会被压缩
         '\\.(' +
